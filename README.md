@@ -47,27 +47,7 @@ We reproduce **Table 3** from the paper: multivariate long-term forecasting resu
 
 ## 5. Reproduction Steps
 
-**Dependencies:**
-```bash
-pip install torch numpy pandas einops
-```
-
-**Download data:**
-```bash
-bash data/download_datasets.sh
-```
-
-**Train a model** (example: Weather dataset, horizon T=96):
-```bash
-python train.py --dataset weather --pred_len 96 --patch_len 16 --stride 8 --d_model 128 --n_heads 4 --e_layers 3 --epochs 10
-```
-
-**Evaluate:**
-```bash
-python evaluate.py --dataset weather --pred_len 96 --checkpoint results/weather_96.pt
-```
-
-**Compute:** A T4 GPU (e.g., Google Colab free tier) is sufficient. Expect ~1 hour per 10 epochs on Traffic; smaller datasets (Weather, Electricity) train in ~10–15 minutes.
+Run the code in our code/CS 4782 - Final Project.ipynb. It covers all the necessary steps and imports.
 
 ---
 

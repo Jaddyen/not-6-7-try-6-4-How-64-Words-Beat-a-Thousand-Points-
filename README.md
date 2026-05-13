@@ -37,7 +37,7 @@ We reproduce **Table 3** from the paper: multivariate long-term forecasting resu
 
 **Model:** PatchTST encoder with patch length P=16, stride S=8, 3 Transformer layers, hidden dim 128, 4 attention heads, and a linear prediction head. Each channel is processed independently through shared weights.
 
-**Datasets:** Weather, Traffic, Electricity, ILI — sourced from the [authors' public repository](https://github.com/yuqinie98/PatchTST).
+**Datasets:** Weather, Traffic, Electricity, ILI — sourced from the [authors' public repository](https://github.com/yuqinie98/PatchTST). Use this link to access the Traffic and Electricity datasets that were too large for us to fit into Github.
 
 **Metrics:** Mean Squared Error (MSE) and Mean Absolute Error (MAE) on held-out test sets.
 
@@ -47,13 +47,13 @@ We reproduce **Table 3** from the paper: multivariate long-term forecasting resu
 
 ## 5. Reproduction Steps
 
-Run the code in our code/CS 4782 - Final Project.ipynb. It covers all the necessary steps and imports.
+Run the code in our `code/CS 4782 - Final Project.ipynb`. It covers all the necessary steps and imports.
 
 ---
 
 ## 6. Results / Insights
 
-Our model came within ~5% MSE of the official PatchTST/64 on Weather, Traffic, and Electricity, and still **outperformed all Transformer baselines** (Informer, Autoformer, FEDFormer, etc.) across all settings. The ILI dataset showed a larger gap (~25% MSE) due to its small size and high noise.
+Our model came within ~5% MSE of the official PatchTST/64 on Weather, Traffic, and Electricity, and still **outperformed all Transformer baselines** (Informer, Autoformer, FEDFormer, etc.) across all settings. The ILI dataset showed a larger gap (~25% MSE) due to its small size and high noise. We also looked at a different dataset, fomc.
 
 | Dataset    | Our MSE | Paper MSE | Δ MSE   | Our MAE | Δ MAE  |
 |------------|---------|-----------|---------|---------|--------|
@@ -61,6 +61,7 @@ Our model came within ~5% MSE of the official PatchTST/64 on Weather, Traffic, a
 | Traffic    | 0.449   | 0.388     | +15.7%  | 0.284   | +6.2%  |
 | Electricity| 0.179   | 0.159     | +12.6%  | 0.265   | +5.6%  |
 | ILI        | 2.174   | 1.743     | +24.7%  | 0.939   | +12.7% |
+| FOMC       | 0.847   | -----     | -----   | 0.586   | ----- |
 | **Average**|         |           | **+12.7%**|       | **+7.0%**|
 
 ---
